@@ -1,7 +1,6 @@
 // Exercício 3
 let num1 = Number(prompt("Digite o primeiro número:"));
 let num2 = Number(prompt("Digite o segundo número:"));
-let = parseInt(num1 + num2);
 let resultadoSoma = num1 + num2 + 10;
 let resultadoSubtracao = num1 - num2;
 let resultadoMultiplicacao = num1 * num1;
