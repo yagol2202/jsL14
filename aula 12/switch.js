@@ -1,18 +1,28 @@
 let preco = Number(prompt("Digite o preço do produto:"));
 let escolha = prompt("Digite a cor da sua escolha: Verde, Amarelo, Azul ou Vermelho").toLowerCase();
+let desconto; // Declarando a variável
+
 switch (escolha) {
-    case verde:
-        console.log("Voce tem 10% de desconto");
+    case "verde": // Com aspas e tudo minúsculo (por causa do toLowerCase)
+        desconto = preco * 0.10;
+        preco = preco - desconto;
         break;
-    case amarelo:
-        console.log("Voce tem 20% de desconto");
+    case "amarelo":
+        desconto = preco * 0.20;
+        preco = preco - desconto;
         break;    
-    case azul:
-        console.log("Voce tem 30% de desconto");
+    case "azul":
+        desconto = preco * 0.30;
+        preco = preco - desconto;
         break;
-    case vermelho:
-        console.log("Voce tem 40% de desconto");
+    case "vermelho":
+        desconto = preco * 0.40;
+        preco = preco - desconto;
         break;    
     default:
-        console.log("Opcao invalida");
+        desconto = 0;
+        console.log("Cor inválida ou sem desconto.");
 }
+
+console.log(`Desconto: R$ ${desconto.toFixed(2)}`);
+console.log(`Preço final: R$ ${preco.toFixed(2)}`);
