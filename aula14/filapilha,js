@@ -1,0 +1,20 @@
+let fila =[]
+let pilha = []
+
+// Adicionando elementos à fila
+fila.push('Elemento 1');
+fila.push('Elemento 2');
+fila.push('Elemento 3');
+
+// Adicionando elementos à pilha
+pilha.unshift('Elemento A');
+pilha.unshift('Elemento B');
+pilha.unshift('Elemento C');
+
+//removendo elementos da fila
+let elementoRemovidoFila = fila.shift();
+console.log(`Elemento removido da fila: ${elementoRemovidoFila}`);
+
+//removendo elementos da pilha
+let elementoRemovidoPilha = pilha.shift();
+console.log(`Elemento removido da pilha: ${elementoRemovidoPilha}`);
