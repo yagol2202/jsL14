@@ -10,14 +10,14 @@ usuario.idade = parseInt(idadedigitada);
 
 function cadastrarUsuario() {
     let chaves = Object.keys(usuario);
-    if (chaves.includes("nome") && chaves.includes("idade")) {
-        if (usuario.idade < 18) {
-            console.log(`${usuario.nome} é menor de idade, cadastro não permitido.`);
-        } else {
-            console.log(`${usuario.nome} cadastrado com sucesso!`);
-        }
-    } else {
+    if (!chaves.includes("nome") || !chaves.includes("idade")) {
         console.log("Erro: Dados do usuário incompletos.");
+        return;
+    }
+    if (usuario.idade < 18) {
+        console.log(`${usuario.nome} é menor de idade, cadastro não permitido.`);
+    } else {
+        console.log(`${usuario.nome} cadastrado com sucesso!`);
     }
 }
 
