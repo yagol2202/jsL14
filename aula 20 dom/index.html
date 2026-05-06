@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade DOM</title>
+
+<link href="https://jsdelivr.net" rel="stylesheet">
+
+
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Atividade 1</h1>
+
+        <p>Representação das informações do segundo objeto produto no card abaixo.</p>
+
+    
+        <div class="card d-none" style="width: 18rem;">
+            <img src="" class="card-img-top imagem" alt="...">
+            <div class="card-body">
+                <h5 class="card-title nome">Card title</h5>
+                <p class="card-text descricao">...</p>
+                <p class="card-text preco">...</p>
+              
+                <a href="#" class="btn btn-primary">Click para comprar</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const produtos = [
+            { id: 1, nome: "Produto 1", descricao: "Descricao do produto 1", preco: 100, img: 'https://placehold.co/600x400' },
+            { id: 2, nome: "Produto 2", descricao: "Descricao do produto 2", preco: 200, img: 'https://placehold.co/600x400' },
+            { id: 3, nome: "Produto 3", descricao: "Descricao do produto 3", preco: 300, img: 'https://placehold.co/600x400' }
+        ];
+
+    
+        const produto2 = produtos[1];
+
+       
+        const card = document.querySelector('.card');
+        const imgElement = document.querySelector('.imagem');
+        const nomeElement = document.querySelector('.nome');
+        const descElement = document.querySelector('.descricao');
+        const precoElement = document.querySelector('.preco');
+        const botao = document.querySelector('.btn-primary');
+
+    
+        imgElement.src = produto2.img;
+        imgElement.alt = produto2.nome;
+        nomeElement.innerHTML = produto2.nome;
+        descElement.innerHTML = produto2.descricao;
+        precoElement.innerHTML = `R$ ${produto2.preco.toFixed(2)}`;
+
+     
+        card.classList.remove('d-none');
+
+        
+        botao.addEventListener("click", (event) => {
+            event.preventDefault(); // 
+            alert(`Produto ${produto2.nome} adicionado ao carrinho!`);
+        });
+    </script>
+</body>
+</html>
