@@ -1,54 +1,24 @@
-async function carregarUsuarios() {
-    const url = 'https://fakestoreapi.com/users' 
-    const container = document.querySelector('#container-usuarios');
-
+async function mostrarUsuarios() {
     try {
-        const resposta = await fetch(url);
-        
-        if (!resposta.ok) {
-            throw new Error(`Erro HTTP: ${resposta.status}`);
-        }
+        const response = await fetch('https://fakestoreapi.com/users');
+        const data = await response.json();
 
-        
-        const usuarios = await resposta.json();
+        const totalUsuarios = data.length;
+        const listaUsuarios = document.createElement('ul');
 
-        
-        container.innerHTML = '';
-
-        
-        const titulo = document.createElement('h1');
-        titulo.textContent = `Usuários cadastrados: ${usuarios.length}`;
-        container.appendChild(titulo);
-
-        
-        const lista = document.createElement('ul');
-
-        
-        usuarios.forEach(usuario => {
-            
-            const item = document.createElement('li');
-            
-       
-            const primeiroNome = usuario.name.firstname;
-            const sobrenome = usuario.name.lastname;
-            
-           
-            const nomeCompleto = `${primeiroNome.charAt(0).toUpperCase() + primeiroNome.slice(1)} ${sobrenome.charAt(0).toUpperCase() + sobrenome.slice(1)}`;
-            
-            
-            item.textContent = nomeCompleto;
-            lista.appendChild(item);
+        data.forEach(usuario => {
+            const li = document.createElement('li');
+            li.textContent = `${usuario.name.firstname} ${usuario.name.lastname}`;
+            listaUsuarios.appendChild(li);
         });
 
-        
-        container.appendChild(lista);
-
-    } catch (erro) {
-        console.error('Erro detalhado:', erro);
-        container.innerHTML = `<p style="color: red;">Erro ao buscar usuários: ${erro.message}</p>`;
+        const divUsuarios = document.getElementById('usuarios');
+        divUsuarios.innerHTML = '';
+        divUsuarios.appendChild(document.createElement('h1')).textContent = `Usuários cadastrados: ${totalUsuarios}`;
+        divUsuarios.appendChild(listaUsuarios);
+    } catch (error) {
+        console.error('Erro ao buscar usuários:', error);
     }
 }
 
-
-carregarUsuarios();
-
+mostrarUsuarios();
