@@ -1,0 +1,96 @@
+/* Estilo Geral */
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Container do Formulário */
+.card {
+    
+    display: flex;
+    flex-direction: column;
+    border: none;
+    padding: 20px;
+    width: 100%;
+    border-radius: 12px;
+    transition: transform 0.2s;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #dee2e6;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#productForm {
+    background: #fff;
+}
+
+/* Mensagens de Erro */
+.error-message {
+    color: #dc3545;
+    font-size: 0.85rem;
+    margin-top: 5px;
+    font-weight: 500;
+    display: none; /* Escondido por padrão via JS */
+}
+
+/* Estilização dos Cards de Produto */
+.card-img-top {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    height: 180px;
+    object-fit: cover; /* Mantém a proporção da imagem sem esticar */
+    background-color: #e9ecef;
+}
+
+.card-title {
+    color: #333;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.card-text {
+    height: 50px; /* Limita altura da descrição */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+     /* Corta o texto em 2 linhas */
+    -webkit-box-orient: vertical;
+}
+
+.price-tag {
+    font-size: 1.2rem;
+    color: #198754;
+    font-weight: bold;
+}
+
+/* Efeito de Hover nos Cards */
+#productList .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+}
+
+/* Botão Customizado */
+.btn-primary {
+    background-color: #0d6efd;
+    border: none;
+    padding: 10px;
+    font-weight: 600;
+    border-radius: 8px;
+}
+
+.btn-primary:hover {
+    background-color: #0b5ed7;
+}
+
+#atividade2 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #dee2e6;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
